@@ -160,6 +160,8 @@ const CreateNFT = (props) => {
         setImageName,
         setArtist,
         setGenre,
+        setFormat,
+        setPrompt,
         setLanguage,
         setQty,
         onPdfChange,
@@ -176,7 +178,7 @@ const CreateNFT = (props) => {
             </div>
             <form>
                 <div className={styles.row}>
-                    <div className="caption grey60"> Pdf file </div>
+                    <div className="caption grey60"> PDF file </div>
                     <input
                         type="file"
                         onChange={(e) => {
@@ -197,7 +199,7 @@ const CreateNFT = (props) => {
                     </div>
                 </div>
                 <div className="caption grey60 mt_5 ml_10">
-                    Please use a standard letter-size PDF of 8.5x11" with 1" margins and a font size of 12pt or greater. The first page should be your book cover.
+                    For best results, the Royal Minter recommends a standard letter-size PDF of 8.5x11" with 1" margins and a font size of 12pt or greater. The first page should be your cover.
                 </div>
                 <div className={styles.row}>
                     <div className="caption grey60"> Book title </div>
@@ -268,7 +270,7 @@ const CreateNFT = (props) => {
                         />
                     </div>
                 </div>
-                <div className="h6 mt_25">Meta data</div>
+                <div className="h6 mt_25">Metadata</div>
                 <div className={styles.row}>
                     <div className="caption grey60"> Genre </div>
                     <MultiSelectComponent
@@ -278,6 +280,26 @@ const CreateNFT = (props) => {
                         mode="Delimiter"
                         fields={fields}
                         change={e => setGenre(e.value)} />
+                </div>
+                <div className={styles.row}>
+                    <div className="caption grey60"> Prompt </div>
+                    <MultiSelectComponent
+                        id="prompt"
+                        name="prompt"
+                        dataSource={promptData}
+                        mode="Delimiter"
+                        fields={fields}
+                        change={e => setPrompt(e.value)} />
+                </div>
+                <div className={styles.row}>
+                    <div className="caption grey60"> Format </div>
+                    <MultiSelectComponent
+                        id="format"
+                        name="format"
+                        dataSource={formatData}
+                        mode="Delimiter"
+                        fields={fields}
+                        change={e => setFormat(e.value)} />
                 </div>
                 <div className={styles.row_group}>
                     <div className={styles.row}>
