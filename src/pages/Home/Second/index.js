@@ -33,6 +33,8 @@ const Second = (props) => {
     const [imageName, setImageName] = useState('No file chosen')
     const [artist, setArtist] = useState('')
     const [genre, setGenre] = useState('')
+    const [prompt, setPrompt] = useState('')
+    const [format, setFormat] = useState('')
     const [language, setLanguage] = useState('')
     const [qty, setQty] = useState(0)
 
@@ -82,6 +84,10 @@ const Second = (props) => {
             alert('Please input artist')
         } else if (genre === '') {
             alert('Please select genre')
+        } else if (prompt === '') {
+            alert('Please select prompt')
+        } else if (format === '') {
+            alert('Please select format')
         } else if (language === '') {
             alert('Please select language')
         } else if (qty === 0) {
@@ -99,6 +105,8 @@ const Second = (props) => {
                 description, image,
                 artist.toString().replace(", ", ","),
                 genre.toString().replace(", ", ","),
+                prompt.toString().replace(", ", ","),
+                format,
                 language,
                 qty
             )
@@ -149,20 +157,20 @@ const Second = (props) => {
                             style={{ width: 432, height: 56, color: "var(--red50)", fontSize: 18 }}
                             onClick={props.handleSetAccount}
                             white />
-                        <div className="caption white mt_15">PageDAO Membership card required to mint.</div>
+                        <div className="caption white mt_15">Wordler Village Passport or Cryptoversal membership required to mint.</div>
                     </div>
                 </div>}
                 {props.account && <div className={styles.noMember}>
                     <div className="body_1">
-                        Excited to mint your first NFTBook? So are we! Go grab a PageDAO Membership NFT that will allow access to it while supplies last. <a href="https://membership.nftbookbazaar.com">https://membership.nftbookbazaar.com</a>
+                        Excited to mint your first Web3 story? So are we! Go grab a Passport NFT that will allow access to Ye Olde Minting Press while supplies last. <a href="https://cryptoversalbooks.io/wordlers/passport">https://cryptoversalbooks.io/wordlers/passport</a>
                         <br /><br />
-                        Stay tuned for #announcements in the <a href="https://discord.gg/zpZTm38ZHC" className="red50" target="_blank" rel="noreferrer">PageDAO discord</a> as we continue to roll out more news. 🙂
+                        Check for the latest updates at <a href="https://cryptoversalbooks.io/wordlers" className="red50" target="_blank" rel="noreferrer">Wordler Village Hall</a> as we continue to roll out more news. 🙂
                     </div>
                     <img src={getImg('no_member.png')} className="mt_15 mb_25" alt="img" />
                     <div className={styles.footer}>
                         <div className="body_2">Network: Polygon</div>
                         <div className={styles.divider}></div>
-                        <a href="https://membership.nftbookbazaar.com"
+                        <a href="https://cryptoversalbooks.io/wordlers/passport"
                             className="d_flex align_items_center" target="_blank" rel="noreferrer">
                             <div className="body_2 red50">Mint yours now!</div>
                             <img src={getImg('open_new.png')} className="ml_20" alt="img" />
@@ -184,6 +192,8 @@ const Second = (props) => {
                 setImageName={setImageName}
                 setArtist={setArtist}
                 setGenre={setGenre}
+                setPrompt={setPrompt}
+                setFormat={setFormat}
                 setLanguage={setLanguage}
                 setQty={setQty}
                 onPdfChange={onPdfChange}
