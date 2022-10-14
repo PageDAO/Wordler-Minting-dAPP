@@ -67,7 +67,7 @@ const History = () => {
         if (comunityContract) {
             init()
         }
-    }, [comunityContract])
+    })
 
     return (
         <div className={styles.div}>
