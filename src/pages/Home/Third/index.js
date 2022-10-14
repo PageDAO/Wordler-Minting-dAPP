@@ -6,7 +6,7 @@ import styles from './Third.module.scss'
 import './Third.css'
 import { getImg, useResize } from '../../../utils/Helper'
 import Accordion from "../../../components/Accordion";
-import Roadmap from "../../../components/Roadmap";
+
 
 const faqs = [
     { "title": "What does the NFTBook Minter do exactly?", "content": "Our Minter is built to enable you to read NFTBooks in your web browser. You also have the freedom to do whatever you want with your NFTBooks; sell them on any NFT marketplace, give them away, burn them or just keep all of them for yourself. Immutably stored on IPFS and minted to the Polygon blockchain, NFTBooks are forever. " },
